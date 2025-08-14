@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asmit Singh - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #4f46e5;
+            --bg-dark: #1f2937;
+            --text-light: #e5e7eb;
+            --card-bg: #374151;
+            --border-color: #4b5563;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .social-link {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+            color: var(--primary-color);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* AI Tech Background for Hero Section */
+        #home {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle, var(--primary-color) 1px, transparent 1px), radial-gradient(circle, var(--primary-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            animation: pulse-grid 20s infinite linear;
+        }
+
+        @keyframes pulse-grid {
+            0% { background-position: 0 0, 20px 20px; }
+            100% { background-position: 40px 40px, 60px 60px; }
+        }
+
+        /* Chat UI styling */
+        #chat-container {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-dark);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .chat-message {
+            max-width: 80%;
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: var(--primary-color);
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+        .ai-message {
+            background-color: var(--card-bg);
+            align-self: flex-start;
+            border: 1px solid var(--border-color);
+            border-bottom-left-radius: 0;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Navigation Bar -->
+    <header class="bg-gray-800 shadow-lg fixed top-0 w-full z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-100">ASMIT SINGH</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-400 hover:text-indigo-400">About</a>
+                <a href="#skills" class="nav-link text-gray-400 hover:text-indigo-400">Skills</a>
+                <a href="#projects" class="nav-link text-gray-400 hover:text-indigo-400">Projects</a>
+                <a href="#exploring-journey" class="nav-link text-gray-400 hover:text-indigo-400">Journey</a>
+                <a href="#cv" class="nav-link text-gray-400 hover:text-indigo-400">CV</a>
+                <a href="#ai-assistant" class="nav-link text-gray-400 hover:text-indigo-400">AI Assistant</a>
+                <a href="#contact" class="nav-link text-gray-400 hover:text-indigo-400">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-indigo-400 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 shadow-lg">
+            <a href="#about" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">About</a>
+            <a href="#skills" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">Skills</a>
+            <a href="#projects" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">Projects</a>
+            <a href="#exploring-journey" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">Journey</a>
+            <a href="#cv" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">CV</a>
+            <a href="#ai-assistant" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">AI Assistant</a>
+            <a href="#contact" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <main class="mt-16">
+
+        <!-- Hero Section -->
+        <section id="home" class="py-20 text-center">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl lg:text-6xl font-extrabold text-white leading-tight">
+                        Hi, I'm <span class="text-indigo-400">Asmit Singh</span>
+                    </h1>
+                    <p class="mt-4 text-xl text-gray-300">
+                        BTech Computer Science student & an aspiring Software Developer.
+                    </p>
+                    <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#contact" class="bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+                            Get In Touch
+                        </a>
+                        <a href="https://asmit4e.github.io/Resume/" target="_blank" rel="noopener noreferrer" class="bg-gray-800 text-indigo-400 font-semibold py-3 px-6 rounded-full border border-indigo-600 hover:bg-gray-700 transition duration-300">
+                            View Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+                    <!-- This image's src will be dynamically updated by JavaScript -->
+                    <img id="profile-picture" src="uploaded:WhatsApp Image 2025-07-16 at 16.26.24_b15fb6c3.jpg" alt="Asmit Singh" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4">About Me</h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                    I am a BTech Computer Science student with a strong foundation in software development and project handling. I am skilled in Python, Java, and DSA using C++. I have developed an AI-based "Visual Math Teacher" app and am actively working on real-world projects. I am seeking a software development internship to apply my skills and contribute to innovative solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">My Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Technical Skills -->
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-4">Technical Skills</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>C++</li>
+                            <li>AI/ML</li>
+                            <li>Web Services APIs</li>
+                        </ul>
+                    </div>
+                    <!-- Professional Skills -->
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-4">Professional Skills</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Project Management</li>
+                            <li>Leadership</li>
+                            <li>Communication</li>
+                            <li>Critical Thinking</li>
+                            <li>Effective Time Management</li>
+                            <li>Collaboration</li>
+                        </ul>
+                    </div>
+                    <!-- Interests -->
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-4">Interests</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Software Development</li>
+                            <li>UI/UX Designing</li>
+                            <li>Problem-Solving</li>
+                            <li>Data Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1: Visual Math Teacher -->
+                    <div class="card overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold text-gray-100 mb-2">Visual Math Teacher</h3>
+                            <p class="text-gray-300 mb-4">
+                                An AI-based solution that helps users solve mathematical problems by scanning printed or handwritten questions using OCR and ML models.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-sm text-gray-400 mb-4">
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">AI/ML</span>
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">OCR</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="https://asmit4e.github.io/Exploring-journey/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
+                                    Live Demo
+                                </a>
+                                <a href="javascript:void(0)" class="text-indigo-400 hover:underline font-semibold" aria-label="GitHub link for Visual Math Teacher">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2: Connect-Me -->
+                    <div class="card overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold text-gray-100 mb-2">Connect-Me</h3>
+                            <p class="text-gray-300 mb-4">
+                                A personal project exploring web development, likely a simple social connection or networking application.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-sm text-gray-400 mb-4">
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">Web Development</span>
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">HTML</span>
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">CSS</span>
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">JavaScript</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="https://asmit4e.github.io/Connect-Me./" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
+                                    Live Demo
+                                </a>
+                                <a href="https://github.com/asmit4e/Connect-Me." target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3: Smart Pharmacy Management System -->
+                    <div class="card overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold text-gray-100 mb-2">Smart Pharmacy Management System</h3>
+                            <p class="text-gray-300 mb-4">
+                                A modern system designed to streamline pharmacy operations, including inventory management, prescription tracking, and sales analytics. This project showcases proficiency in backend development, database management, and building intuitive user interfaces.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-sm text-gray-400 mb-4">
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">Inventory Management</span>
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">Database Management</span>
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">Sales Analytics</span>
+                                <span class="bg-gray-700 px-3 py-1 rounded-full">Backend Development</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="javascript:void(0)" class="text-indigo-400 hover:underline font-semibold">
+                                    Live Demo
+                                </a>
+                                <a href="https://github.com/asmit4e/Smart-Pharmacy-Management-System" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exploring Journey Section -->
+        <section id="exploring-journey" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4">My Exploring Journey</h2>
+                <div class="card p-8 max-w-4xl mx-auto">
+                    <p class="text-lg text-gray-300 mb-4">
+                        This website documents my personal journey and showcases my creative projects and explorations. It's a testament to my passion for continuous learning and development.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://asmit4e.github.io/Exploring-journey/" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+                            View Website
+                        </a>
+                        <a href="https://github.com/asmit4e/Exploring-journey" target="_blank" rel="noopener noreferrer" class="bg-white text-indigo-600 font-semibold py-3 px-6 rounded-full border border-indigo-600 hover:bg-indigo-50 transition duration-300">
+                            GitHub Repo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4">My CV</h2>
+                <div class="card p-8 max-w-4xl mx-auto">
+                    <p class="text-lg text-gray-300 mb-4">
+                        For a more detailed overview of my academic and professional background, please view my full Curriculum Vitae.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://asmit4e.github.io/CV/" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+                            View CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Assistant Feature Section -->
+        <section id="ai-assistant" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">✨ AI Interview Assistant ✨</h2>
+                <div class="card p-8 max-w-2xl mx-auto">
+                    <p class="text-lg text-gray-300 mb-6">
+                        Practice for your next interview! Ask me any question, and I'll answer it based on the details in your resume. You can also ask me to navigate the site for you!
+                    </p>
+                    <div id="chat-container">
+                        <!-- Chat messages will be dynamically added here -->
+                        <div class="ai-message text-sm">Hello! I'm your AI Assistant. Ask me a question like "Tell me about your projects" or "How can I contact you?"</div>
+                    </div>
+                    <div class="mt-4 flex space-x-2">
+                        <input type="text" id="chat-input" class="flex-grow p-3 rounded-full bg-gray-700 text-white border-0 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Ask a question..." />
+                        <button id="send-button" class="bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                    I am actively seeking software development internship opportunities. Feel free to connect with me!
+                </p>
+                <a href="mailto:asmit.singh.in@gmail.com" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+                    Email Me
+                </a>
+                <div class="mt-12 flex justify-center space-x-6">
+                    <!-- Social Icons -->
+                    <a href="https://www.linkedin.com/in/asmit-singh-795b97287?" target="_blank" rel="noopener noreferrer" class="social-link text-gray-400 hover:text-indigo-400" title="LinkedIn">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.765s.784-1.765 1.75-1.765 1.75.79 1.75 1.765-.783 1.765-1.75 1.765zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/asmit4e" target="_blank" rel="noopener noreferrer" class="social-link text-gray-400 hover:text-indigo-400" title="GitHub">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.304.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.771.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/sasmit959?t=6IfuQ7fWLkQz5T3KC2o7AA&s=09" target="_blank" rel="noopener noreferrer" class="social-link text-gray-400 hover:text-indigo-400" title="Twitter">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.322 0-6.002 2.68-6.002 6 0 .471.055.932.164 1.373-4.99-.252-9.397-2.645-12.378-6.281-.516.886-.827 1.91-.827 3.111 0 2.204 1.185 4.154 2.977 5.292-.931-.028-1.808-.28-2.572-.711v.08c0 2.906 2.062 5.334 4.793 5.867-.498.138-1.025.212-1.564.212-.384 0-.756-.039-1.119-.106.764 2.388 2.977 4.136 5.602 4.187-2.051 1.608-4.634 2.585-7.409 2.585-.486 0-.965-.029-1.434-.085 2.641 1.701 5.762 2.691 9.066 2.691 10.865 0 16.84-8.999 16.84-16.84 0-.257-.006-.512-.019-.765z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://asmit4e.github.io/Connect-Me./" target="_blank" rel="noopener noreferrer" class="social-link text-gray-400 hover:text-indigo-400" title="Connect-Me">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.536a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-6">
+            <div class="container mx-auto px-6 text-center">
+                <p>&copy; 2024 Asmit Singh. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Resume content, fetched from the provided PDF
+        const resumeContent = `ASMIT SINGH
+Project Management Problem Solving Data Analysis
+8004413591 asmit.singh.in@gmail.com
+linkedin.com/in/asmit-singh-795b97287 github.com/asmit4e Greater Noida
+Summary
+BTech Computer Science student with 4+ years of experience in software development and project handling. Skilled in Python, Java, and DSA using C++. Developed an Al-based "Visual Math Teacher" app to solve math problems by scanning questions. Completed structured DSA training and worked on real-world projects. Seeking a software development internship to apply my skills and contribute to innovative solutions.
+Projects
+Visual Math Teacher
+An Al-based solution that helps users solve mathematical problems by scanning printed or handwritten questions using OCR and ML models.
+Volunteering
+International Conference Institute of Electrical and Electronics Engineers
+Dec 2024
+Worked as a volunteer for communication and management roles during the conference.
+Training / Courses
+• DSA with C++
+C/C++
+Completed
+Completed
+Ongoing
+Al and ML
+Key Achievements
+• Effective Time Management - Balanced academic responsibilities with project deadlines to ensure timely and
+quality task completion.
+• Collaboration Performance Boost Encouraged cross-functional teamwork to improve efficiency and creative
+output.
+Skills
+Technical: Python, Java, JavaScript, C++, AI/ML, Web Services
+APIS
+Professional: Project Management, Leadership,
+Communication, Critical Thinking
+Interests
+Software Development, UI/UX Designing
+Strengths
+Problem-Solving Solving operational and engineering problems is the reason why I never give up on a project.
+Interpersonal Skills Good communication, active listening, and negotiation help me build respect among colleagues.
+Education
+Bachelor of Computer Science and Engineering
+ITS Engineering College, Greater Noida Affiliated to AKTU
+2022
+2026, Greater Noida
+High School: 74% Intermediate: 75%
+BTech (Current): 66%`;
+
+        // --- Dynamically Fetch GitHub Profile Picture ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const githubUsername = 'asmit4e';
+            const profilePicElement = document.getElementById('profile-picture');
+            
+            fetch(`https://api.github.com/users/${githubUsername}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.avatar_url) {
+                        profilePicElement.src = data.avatar_url;
+                    }
+                })
+                .catch(error => {
+                    console.error('Failed to fetch GitHub profile picture:', error);
+                    // The original src from the HTML will be used as a fallback.
+                });
+        });
+
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    e.preventDefault();
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // AI Interview Assistant Logic
+        const chatContainer = document.getElementById('chat-container');
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+
+        // Helper function to add AI messages to the chat
+        function addAiMessage(text) {
+            const aiMessageElement = document.createElement('div');
+            aiMessageElement.classList.add('chat-message', 'ai-message');
+            aiMessageElement.innerText = text;
+            chatContainer.appendChild(aiMessageElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const userMessage = chatInput.value.trim();
+            const lowerCaseUserMessage = userMessage.toLowerCase();
+            if (!userMessage) return;
+
+            // Add user message to chat
+            const userMessageElement = document.createElement('div');
+            userMessageElement.classList.add('chat-message', 'user-message');
+            userMessageElement.innerText = userMessage;
+            chatContainer.appendChild(userMessageElement);
+            chatInput.value = '';
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            // --- Intent Recognition for Site Navigation ---
+            if (lowerCaseUserMessage.includes('contact') || lowerCaseUserMessage.includes('email') || lowerCaseUserMessage.includes('get in touch')) {
+                addAiMessage("Sure, scrolling to the contact section for you.");
+                document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                return; 
+            }
+            if (lowerCaseUserMessage.includes('project')) {
+                addAiMessage("Of course! Taking you to the projects section.");
+                document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+            if (lowerCaseUserMessage.includes('skill')) {
+                addAiMessage("Here are the skills. Let me know if you want to know more about a specific one.");
+                document.querySelector('#skills').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+             if (lowerCaseUserMessage.includes('about') || lowerCaseUserMessage.includes('who are you')) {
+                addAiMessage("Here's the about section.");
+                document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+            if (lowerCaseUserMessage.includes('cv') || lowerCaseUserMessage.includes('curriculum vitae')) {
+                addAiMessage("Here's a link to the full CV.");
+                document.querySelector('#cv').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+
+            // Add loading indicator for API call
+            const loadingElement = document.createElement('div');
+            loadingElement.classList.add('ai-message', 'chat-message', 'flex', 'items-center', 'space-x-2');
+            loadingElement.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span class="text-sm">Thinking...</span>
+            `;
+            chatContainer.appendChild(loadingElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            try {
+                // Construct prompt with resume content as context
+                const prompt = `You are a helpful AI assistant for Asmit Singh's personal portfolio website. Your primary goal is to answer questions based on the provided resume context. You can also answer general conversational questions like "hello" or "how are you". If a question is about a specific section (like projects or contact), you can guide the user there, but the website's code will handle the actual scrolling.
+
+                Resume Context:
+                "${resumeContent}"
+
+                User's Question:
+                "${userMessage}"
+                
+                Your Answer:`;
+
+                const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                
+                chatContainer.removeChild(loadingElement);
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const aiAnswer = result.candidates[0].content.parts[0].text;
+                    addAiMessage(aiAnswer);
+                } else {
+                    addAiMessage("Error: I couldn't generate a response. Please try again.");
+                }
+            } catch (error) {
+                chatContainer.removeChild(loadingElement);
+                console.error("Error calling Gemini API:", error);
+                addAiMessage("Error: Could not connect to the API. Please check your network connection.");
+            }
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
