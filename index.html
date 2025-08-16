@@ -98,6 +98,22 @@
             border: 1px solid var(--border-color);
             border-bottom-left-radius: 0;
         }
+        
+        /* New Skill Bar Styles */
+        .skill-bar-container {
+            width: 100%;
+            background-color: #4b5563;
+            border-radius: 999px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .skill-bar {
+            background-color: var(--primary-color);
+            height: 100%;
+            border-radius: 999px;
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
     </style>
 </head>
 <body class="text-gray-200">
@@ -172,43 +188,81 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Skills Section - UPDATED -->
         <section id="skills" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">My Skills</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">My Technical Toolbox</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Technical Skills -->
+                    <!-- Languages & Databases -->
                     <div class="card p-8">
-                        <h3 class="text-2xl font-semibold text-gray-100 mb-4">Technical Skills</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>Python</li>
-                            <li>Java</li>
-                            <li>JavaScript</li>
-                            <li>C++</li>
-                            <li>AI/ML</li>
-                            <li>Web Services APIs</li>
-                        </ul>
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-6">Languages & Databases</h3>
+                        <div class="space-y-6">
+                            <div class="skill-item transform transition-transform hover:scale-105">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-200">Python</span>
+                                    <span class="text-sm text-gray-400">90%</span>
+                                </div>
+                                <div class="skill-bar-container"><div class="skill-bar" data-width="90%"></div></div>
+                            </div>
+                            <div class="skill-item transform transition-transform hover:scale-105">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-200">Java</span>
+                                    <span class="text-sm text-gray-400">85%</span>
+                                </div>
+                                <div class="skill-bar-container"><div class="skill-bar" data-width="85%"></div></div>
+                            </div>
+                            <div class="skill-item transform transition-transform hover:scale-105">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-200">C++ (DSA)</span>
+                                    <span class="text-sm text-gray-400">95%</span>
+                                </div>
+                                <div class="skill-bar-container"><div class="skill-bar" data-width="95%"></div></div>
+                            </div>
+                            <div class="skill-item transform transition-transform hover:scale-105">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-200">JavaScript</span>
+                                    <span class="text-sm text-gray-400">75%</span>
+                                </div>
+                                <div class="skill-bar-container"><div class="skill-bar" data-width="75%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Frameworks & Tools -->
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-6">Frameworks & Tools</h3>
+                        <div class="space-y-6">
+                            <div class="skill-item transform transition-transform hover:scale-105">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-200">AI/ML</span>
+                                    <span class="text-sm text-gray-400">80%</span>
+                                </div>
+                                <div class="skill-bar-container"><div class="skill-bar" data-width="80%"></div></div>
+                            </div>
+                             <div class="skill-item transform transition-transform hover:scale-105">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-200">Web Services & APIs</span>
+                                    <span class="text-sm text-gray-400">70%</span>
+                                </div>
+                                <div class="skill-bar-container"><div class="skill-bar" data-width="70%"></div></div>
+                            </div>
+                            <div class="skill-item transform transition-transform hover:scale-105">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-200">Git & GitHub</span>
+                                    <span class="text-sm text-gray-400">85%</span>
+                                </div>
+                                <div class="skill-bar-container"><div class="skill-bar" data-width="85%"></div></div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Professional Skills -->
                     <div class="card p-8">
-                        <h3 class="text-2xl font-semibold text-gray-100 mb-4">Professional Skills</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>Project Management</li>
-                            <li>Leadership</li>
-                            <li>Communication</li>
-                            <li>Critical Thinking</li>
-                            <li>Effective Time Management</li>
-                            <li>Collaboration</li>
-                        </ul>
-                    </div>
-                    <!-- Interests -->
-                    <div class="card p-8">
-                        <h3 class="text-2xl font-semibold text-gray-100 mb-4">Interests</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>Software Development</li>
-                            <li>UI/UX Designing</li>
-                            <li>Problem-Solving</li>
-                            <li>Data Analysis</li>
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-6">Professional Skills</h3>
+                        <ul class="space-y-4 text-gray-300">
+                           <li class="flex items-center gap-3 transform transition-transform hover:scale-105"><svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Problem-Solving</span></li>
+                           <li class="flex items-center gap-3 transform transition-transform hover:scale-105"><svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Project Management</span></li>
+                           <li class="flex items-center gap-3 transform transition-transform hover:scale-105"><svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Leadership & Teamwork</span></li>
+                           <li class="flex items-center gap-3 transform transition-transform hover:scale-105"><svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Effective Communication</span></li>
+                           <li class="flex items-center gap-3 transform transition-transform hover:scale-105"><svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Critical Thinking</span></li>
                         </ul>
                     </div>
                 </div>
@@ -219,6 +273,34 @@
         <section id="projects" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">Projects</h2>
+                
+                <!-- Major Project Section -->
+                <h3 class="text-2xl font-bold text-indigo-400 mb-6">Major Project</h3>
+                <div class="card overflow-hidden mb-12 bg-gray-700 border border-indigo-500 shadow-lg">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-semibold text-white mb-2">Smart Pharmacy Management System</h3>
+                        <p class="text-gray-300 mb-4">
+                            A modern system designed to streamline pharmacy operations, including inventory management, prescription tracking, and sales analytics. This project showcases proficiency in backend development, database management, and building intuitive user interfaces. <strong class="text-indigo-300">I am also working on this project.</strong>
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-sm text-gray-400 mb-6">
+                            <span class="bg-gray-600 px-3 py-1 rounded-full">Inventory Management</span>
+                            <span class="bg-gray-600 px-3 py-1 rounded-full">Database Management</span>
+                            <span class="bg-gray-600 px-3 py-1 rounded-full">Sales Analytics</span>
+                            <span class="bg-gray-600 px-3 py-1 rounded-full">Backend Development</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <span class="bg-yellow-500 text-yellow-900 font-semibold py-2 px-5 rounded-full cursor-not-allowed">
+                                In Progress
+                            </span>
+                            <span class="bg-gray-600 text-gray-400 font-semibold py-2 px-5 rounded-full cursor-not-allowed">
+                                Code (Coming Soon)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Projects Section -->
+                <h3 class="text-2xl font-bold text-indigo-400 mb-6">Mini Projects</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Project 1: Visual Math Teacher -->
                     <div class="card overflow-hidden">
@@ -232,10 +314,10 @@
                                 <span class="bg-gray-700 px-3 py-1 rounded-full">OCR</span>
                             </div>
                             <div class="flex space-x-4">
-                                <a href="https://asmit4e.github.io/Exploring-journey/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
+                                <a href="https://asmit4e.github.io/Visual-Math-Teacher/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
                                     Live Demo
                                 </a>
-                                <a href="javascript:void(0)" class="text-indigo-400 hover:underline font-semibold" aria-label="GitHub link for Visual Math Teacher">
+                                <a href="https://github.com/asmit4e/Visual-Math-Teacher" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
                                     GitHub
                                 </a>
                             </div>
@@ -255,33 +337,10 @@
                                 <span class="bg-gray-700 px-3 py-1 rounded-full">JavaScript</span>
                             </div>
                             <div class="flex space-x-4">
-                                <a href="https://asmit4e.github.io/Connect-Me./" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
+                                <a href="https://asmit4e.github.io/social-media-hub/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
                                     Live Demo
                                 </a>
-                                <a href="https://github.com/asmit4e/Connect-Me." target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 3: Smart Pharmacy Management System -->
-                    <div class="card overflow-hidden">
-                        <div class="p-8">
-                            <h3 class="text-2xl font-semibold text-gray-100 mb-2">Smart Pharmacy Management System</h3>
-                            <p class="text-gray-300 mb-4">
-                                A modern system designed to streamline pharmacy operations, including inventory management, prescription tracking, and sales analytics. This project showcases proficiency in backend development, database management, and building intuitive user interfaces.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-sm text-gray-400 mb-4">
-                                <span class="bg-gray-700 px-3 py-1 rounded-full">Inventory Management</span>
-                                <span class="bg-gray-700 px-3 py-1 rounded-full">Database Management</span>
-                                <span class="bg-gray-700 px-3 py-1 rounded-full">Sales Analytics</span>
-                                <span class="bg-gray-700 px-3 py-1 rounded-full">Backend Development</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <a href="javascript:void(0)" class="text-indigo-400 hover:underline font-semibold">
-                                    Live Demo
-                                </a>
-                                <a href="https://github.com/asmit4e/Smart-Pharmacy-Management-System" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
+                                <a href="https://github.com/asmit4e/social-media-hub" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline font-semibold">
                                     GitHub
                                 </a>
                             </div>
@@ -386,8 +445,8 @@
 
         <!-- Footer -->
         <footer class="bg-gray-900 text-white py-6">
-            <div class="container mx-auto px-6 text-center">
-                <p>&copy; 2024 Asmit Singh. All rights reserved.</p>
+            <div id="live-clock-footer" class="container mx-auto px-6 text-center text-gray-400">
+                <!-- Clock will be injected here -->
             </div>
         </footer>
 
@@ -459,6 +518,37 @@ BTech (Current): 66%`;
                     console.error('Failed to fetch GitHub profile picture:', error);
                     // The original src from the HTML will be used as a fallback.
                 });
+            
+            // --- Live Clock in Footer ---
+            const clockElementFooter = document.getElementById('live-clock-footer');
+            function updateFooterClock() {
+                if (clockElementFooter) {
+                    const now = new Date();
+                    const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+                    const dateString = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                    clockElementFooter.textContent = `© ${now.getFullYear()} Asmit Singh | ${dateString} | ${timeString}`;
+                }
+            }
+            updateFooterClock();
+            setInterval(updateFooterClock, 1000);
+            
+            // --- Skill Bar Animation on Scroll ---
+            const skillsSection = document.querySelector('#skills');
+            const skillBars = document.querySelectorAll('.skill-bar');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        skillBars.forEach(bar => {
+                            bar.style.width = bar.dataset.width;
+                        });
+                        observer.unobserve(skillsSection);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            if (skillsSection) {
+                observer.observe(skillsSection);
+            }
         });
 
 
