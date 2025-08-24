@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asmit Singh - Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
@@ -54,8 +53,6 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
-
-        /* AI Tech Background for Hero Section */
         #home {
             background-color: var(--bg-dark);
             background-image: radial-gradient(circle, var(--primary-color) 1px, transparent 1px), radial-gradient(circle, var(--primary-color) 1px, transparent 1px);
@@ -68,8 +65,7 @@
             0% { background-position: 0 0, 20px 20px; }
             100% { background-position: 40px 40px, 60px 60px; }
         }
-
-        /* Chat UI styling */
+ 
         #chat-container {
             height: 400px;
             overflow-y: auto;
@@ -99,7 +95,7 @@
             border-bottom-left-radius: 0;
         }
         
-        /* New Skill Bar Styles */
+      
         .skill-bar-container {
             width: 100%;
             background-color: #4b5563;
@@ -118,7 +114,7 @@
 </head>
 <body class="text-gray-200">
 
-    <!-- Navigation Bar -->
+    
     <header class="bg-gray-800 shadow-lg fixed top-0 w-full z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-gray-100">ASMIT SINGH</a>
@@ -131,14 +127,14 @@
                 <a href="#ai-assistant" class="nav-link text-gray-400 hover:text-indigo-400">AI Assistant</a>
                 <a href="#contact" class="nav-link text-gray-400 hover:text-indigo-400">Contact</a>
             </div>
-            <!-- Mobile Menu Button -->
+            
             <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-indigo-400 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
+        
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800 shadow-lg">
             <a href="#about" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">About</a>
             <a href="#skills" class="block py-2 px-6 text-gray-400 hover:bg-gray-700">Skills</a>
@@ -152,7 +148,7 @@
 
     <main class="mt-16">
 
-        <!-- Hero Section -->
+        
         <section id="home" class="py-20 text-center">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 text-center md:text-left">
@@ -172,13 +168,13 @@
                     </div>
                 </div>
                 <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-                    <!-- This image's src will be dynamically updated by JavaScript -->
+                    
                     <img id="profile-picture" src="https://avatars.githubusercontent.com/u/155998235?v=4" alt="Asmit Singh" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl">
                 </div>
             </div>
         </section>
 
-        <!-- About Me Section -->
+        
         <section id="about" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4">About Me</h2>
@@ -188,12 +184,12 @@
             </div>
         </section>
 
-        <!-- Skills Section - UPDATED -->
+        
         <section id="skills" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">My Technical Toolbox</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Languages & Databases -->
+                    
                     <div class="card p-8">
                         <h3 class="text-2xl font-semibold text-gray-100 mb-6">Languages & Databases</h3>
                         <div class="space-y-6">
@@ -227,7 +223,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Frameworks & Tools -->
+                    
                     <div class="card p-8">
                         <h3 class="text-2xl font-semibold text-gray-100 mb-6">Frameworks & Tools</h3>
                         <div class="space-y-6">
@@ -254,7 +250,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Professional Skills -->
+                     
                     <div class="card p-8">
                         <h3 class="text-2xl font-semibold text-gray-100 mb-6">Professional Skills</h3>
                         <ul class="space-y-4 text-gray-300">
@@ -269,12 +265,12 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+       
         <section id="projects" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">Projects</h2>
                 
-                <!-- Major Project Section -->
+                 
                 <h3 class="text-2xl font-bold text-indigo-400 mb-6">Major Project</h3>
                 <div class="card overflow-hidden mb-12 bg-gray-700 border border-indigo-500 shadow-lg">
                     <div class="p-8">
@@ -299,10 +295,10 @@
                     </div>
                 </div>
 
-                <!-- Mini Projects Section -->
+                 
                 <h3 class="text-2xl font-bold text-indigo-400 mb-6">Mini Projects</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Project 1: Visual Math Teacher -->
+                    
                     <div class="card overflow-hidden">
                         <div class="p-8">
                             <h3 class="text-2xl font-semibold text-gray-100 mb-2">Visual Math Teacher</h3>
@@ -323,7 +319,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Project 2: Social Link Hub -->
+                    
                     <div class="card overflow-hidden">
                         <div class="p-8">
                             <h3 class="text-2xl font-semibold text-gray-100 mb-2">Social Link Hub</h3>
@@ -350,7 +346,7 @@
             </div>
         </section>
 
-        <!-- Exploring Journey Section -->
+        
         <section id="exploring-journey" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4">My Exploring Journey</h2>
@@ -370,7 +366,7 @@
             </div>
         </section>
 
-        <!-- CV Section -->
+        
         <section id="cv" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4">My CV</h2>
@@ -387,17 +383,15 @@
             </div>
         </section>
 
-        <!-- AI Assistant Feature Section -->
+         
         <section id="ai-assistant" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-12 text-center">✨ AI Interview Assistant ✨</h2>
                 <div class="card p-8 max-w-2xl mx-auto">
-                    <p class="text-lg text-gray-300 mb-6">
-                        Practice for your next interview! Ask me any question, and I'll answer it based on the details in your resume. You can also ask me to navigate the site for you!
-                    </p>
+                    
                     <div id="chat-container">
-                        <!-- Chat messages will be dynamically added here -->
-                        <div class="ai-message text-sm">Hello! I'm your AI Assistant. Ask me a question like "Tell me about your projects" or "How can I contact you?"</div>
+                     
+                        
                     </div>
                     <div class="mt-4 flex space-x-2">
                         <input type="text" id="chat-input" class="flex-grow p-3 rounded-full bg-gray-700 text-white border-0 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Ask a question..." />
@@ -409,7 +403,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+         
         <section id="contact" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-100 mb-4">Get In Touch</h2>
@@ -420,7 +414,7 @@
                     Email Me
                 </a>
                 <div class="mt-12 flex justify-center space-x-6">
-                    <!-- Social Icons -->
+                    
                     <a href="https://www.linkedin.com/in/asmit-singh-795b97287?" target="_blank" rel="noopener noreferrer" class="social-link text-gray-400 hover:text-indigo-400" title="LinkedIn">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.765s.784-1.765 1.75-1.765 1.75.79 1.75 1.765-.783 1.765-1.75 1.765zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
@@ -443,17 +437,17 @@
             </div>
         </section>
 
-        <!-- Footer -->
+         
         <footer class="bg-gray-900 text-white py-6">
             <div id="live-clock-footer" class="container mx-auto px-6 text-center text-gray-400">
-                <!-- Clock will be injected here -->
+                 
             </div>
         </footer>
 
     </main>
 
     <script>
-        // Resume content, fetched from the provided PDF
+         
         const resumeContent = `ASMIT SINGH
 Project Management Problem Solving Data Analysis
 8004413591 asmit.singh.in@gmail.com
@@ -497,7 +491,7 @@ ITS Engineering College, Greater Noida Affiliated to AKTU
 High School: 74% Intermediate: 75%
 BTech (Current): 66%`;
 
-        // --- Dynamically Fetch GitHub Profile Picture ---
+        
         window.addEventListener('DOMContentLoaded', () => {
             const githubUsername = 'asmit4e';
             const profilePicElement = document.getElementById('profile-picture');
@@ -516,10 +510,10 @@ BTech (Current): 66%`;
                 })
                 .catch(error => {
                     console.error('Failed to fetch GitHub profile picture:', error);
-                    // The original src from the HTML will be used as a fallback.
+                    
                 });
             
-            // --- Live Clock in Footer ---
+            
             const clockElementFooter = document.getElementById('live-clock-footer');
             function updateFooterClock() {
                 if (clockElementFooter) {
@@ -532,7 +526,7 @@ BTech (Current): 66%`;
             updateFooterClock();
             setInterval(updateFooterClock, 1000);
             
-            // --- Skill Bar Animation on Scroll ---
+            
             const skillsSection = document.querySelector('#skills');
             const skillBars = document.querySelectorAll('.skill-bar');
             const observer = new IntersectionObserver(entries => {
@@ -552,7 +546,7 @@ BTech (Current): 66%`;
         });
 
 
-        // Smooth scrolling for navigation links
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
@@ -565,7 +559,7 @@ BTech (Current): 66%`;
             });
         });
 
-        // Mobile menu toggle
+         
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -573,62 +567,66 @@ BTech (Current): 66%`;
             mobileMenu.classList.toggle('hidden');
         });
 
-        // AI Interview Assistant Logic
+        
         const chatContainer = document.getElementById('chat-container');
         const chatInput = document.getElementById('chat-input');
         const sendButton = document.getElementById('send-button');
 
-        // Helper function to add AI messages to the chat
-        function addAiMessage(text) {
-            const aiMessageElement = document.createElement('div');
-            aiMessageElement.classList.add('chat-message', 'ai-message');
-            aiMessageElement.innerText = text;
-            chatContainer.appendChild(aiMessageElement);
+        
+        function addMessage(text, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message');
+            if (sender === 'user') {
+                messageElement.classList.add('user-message');
+            } else {
+                messageElement.classList.add('ai-message');
+            }
+            messageElement.innerText = text;
+            chatContainer.appendChild(messageElement);
             chatContainer.scrollTop = chatContainer.scrollHeight;
         }
+        
+ 
+        addMessage("Hello! I'm your AI Assistant. How can I help you?", 'ai');
+
 
         async function sendMessage() {
             const userMessage = chatInput.value.trim();
             const lowerCaseUserMessage = userMessage.toLowerCase();
             if (!userMessage) return;
 
-            // Add user message to chat
-            const userMessageElement = document.createElement('div');
-            userMessageElement.classList.add('chat-message', 'user-message');
-            userMessageElement.innerText = userMessage;
-            chatContainer.appendChild(userMessageElement);
+            addMessage(userMessage, 'user');
             chatInput.value = '';
-            chatContainer.scrollTop = chatContainer.scrollHeight;
 
-            // --- Intent Recognition for Site Navigation ---
+    
             if (lowerCaseUserMessage.includes('contact') || lowerCaseUserMessage.includes('email') || lowerCaseUserMessage.includes('get in touch')) {
-                addAiMessage("Sure, scrolling to the contact section for you.");
+                addMessage("Sure, scrolling to the contact section for you.", 'ai');
                 document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
                 return; 
             }
             if (lowerCaseUserMessage.includes('project')) {
-                addAiMessage("Of course! Taking you to the projects section.");
+                addMessage("Of course! Taking you to the projects section.", 'ai');
                 document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
                 return;
             }
             if (lowerCaseUserMessage.includes('skill')) {
-                addAiMessage("Here are the skills. Let me know if you want to know more about a specific one.");
+                addMessage("Here are the skills. Let me know if you want to know more about a specific one.", 'ai');
                 document.querySelector('#skills').scrollIntoView({ behavior: 'smooth' });
                 return;
             }
              if (lowerCaseUserMessage.includes('about') || lowerCaseUserMessage.includes('who are you')) {
-                addAiMessage("Here's the about section.");
+                addMessage("Here's the about section.", 'ai');
                 document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
                 return;
             }
             if (lowerCaseUserMessage.includes('cv') || lowerCaseUserMessage.includes('curriculum vitae')) {
-                addAiMessage("Here's a link to the full CV.");
+                addMessage("Here's a link to the full CV.", 'ai');
                 document.querySelector('#cv').scrollIntoView({ behavior: 'smooth' });
                 return;
             }
 
 
-            // Add loading indicator for API call
+             
             const loadingElement = document.createElement('div');
             loadingElement.classList.add('ai-message', 'chat-message', 'flex', 'items-center', 'space-x-2');
             loadingElement.innerHTML = `
@@ -642,16 +640,30 @@ BTech (Current): 66%`;
             chatContainer.scrollTop = chatContainer.scrollHeight;
 
             try {
-                // Construct prompt with resume content as context
-                const prompt = `You are a helpful AI assistant for Asmit Singh's personal portfolio website. Your primary goal is to answer questions based on the provided resume context. You can also answer general conversational questions like "hello" or "how are you". If a question is about a specific section (like projects or contact), you can guide the user there, but the website's code will handle the actual scrolling.
+                 
+                const prompt = `You are a helpful and professional AI assistant for Asmit Singh's personal portfolio website. Your main purpose is to answer questions about Asmit, his skills, and his projects. You should use the information provided below as context.
 
-                Resume Context:
-                "${resumeContent}"
+If a question is a simple greeting (like "hello" or "hi"), respond warmly and professionally.
+If a question is about Asmit's skills, projects, education, or experience, provide a detailed and accurate response based on the provided data.
+If a question is a general, real-world query (e.g., "What is the capital of France?"), you can answer it accurately and concisely, but avoid long, detailed explanations. After answering, gently steer the conversation back to the portfolio by suggesting the user ask about Asmit's work.
+If you are asked a question that you cannot answer or that is beyond your scope, you can politely say "I can only provide information about Asmit's portfolio and related topics, but I can't answer that. Perhaps you could ask me about one of his projects?"
 
-                User's Question:
-                "${userMessage}"
+Asmit's Information:
+- **Name:** Asmit Singh
+- **Education:** BTech Computer Science from ITS Engineering College, Greater Noida (2022-2026)
+- **Technical Skills:** Python, Java, C++ (DSA), JavaScript, AI/ML, Web Services & APIs, Git & GitHub.
+- **Professional Skills:** Problem-Solving, Project Management, Leadership & Teamwork, Communication, Critical Thinking.
+- **Projects:**
+    - **Smart Pharmacy Management System:** A major, ongoing project focusing on backend development, database management, and sales analytics.
+    - **Visual Math Teacher:** An AI-based solution using OCR and ML to solve math problems from images.
+    - **Social Link Hub:** A single-page web app to consolidate social and professional links.
+- **Contact:** asmit.singh.in@gmail.com
+- **Resume:** The full resume is available, but you should summarize the key points from the list above.
+
+User's Question:
+"${userMessage}"
                 
-                Your Answer:`;
+Your Answer:`;
 
                 const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
                 const apiKey = "";
@@ -671,14 +683,14 @@ BTech (Current): 66%`;
                     result.candidates[0].content && result.candidates[0].content.parts &&
                     result.candidates[0].content.parts.length > 0) {
                     const aiAnswer = result.candidates[0].content.parts[0].text;
-                    addAiMessage(aiAnswer);
+                    addMessage(aiAnswer, 'ai');
                 } else {
-                    addAiMessage("Error: I couldn't generate a response. Please try again.");
+                    addMessage("Error: I couldn't generate a response. Please try again.", 'ai');
                 }
             } catch (error) {
                 chatContainer.removeChild(loadingElement);
                 console.error("Error calling Gemini API:", error);
-                addAiMessage("Error: Could not connect to the API. Please check your network connection.");
+                addMessage("Error: Could not connect to the API. Please check your network connection.", 'ai');
             }
             chatContainer.scrollTop = chatContainer.scrollHeight;
         }
