@@ -161,13 +161,13 @@
                         <a href="#contact" class="bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
                             Get In Touch
                         </a>
-                        <a href="Asmit_Singh_Resume.pdf" download="Asmit_Singh_Resume.pdf" class="bg-gray-800 text-indigo-400 font-semibold py-3 px-6 rounded-full border border-indigo-600 hover:bg-gray-700 transition duration-300">
+                        <a href="myres.pdf.pdf" download="myres.pdf.pdf" class="bg-gray-800 text-indigo-400 font-semibold py-3 px-6 rounded-full border border-indigo-600 hover:bg-gray-700 transition duration-300">
                             Download Resume
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-                    <img id="profile-picture" src="https://avatars.githubusercontent.com/u/155998235?v=4" alt="Asmit Singh" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl">
+                    <img id="profile-picture" src="me.jpeg" alt="Asmit Singh" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl">
                 </div>
             </div>
         </section>
@@ -470,28 +470,7 @@ ITS Engineering College, Greater Noida Affiliated to AKTU
 High School: 74% Intermediate: 75%
 BTech (Current): 66%`;
 
-        // --- Dynamically Fetch GitHub Profile Picture ---
         window.addEventListener('DOMContentLoaded', () => {
-            const githubUsername = 'asmit4e';
-            const profilePicElement = document.getElementById('profile-picture');
-            
-            fetch(`https://api.github.com/users/${githubUsername}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.avatar_url) {
-                        profilePicElement.src = data.avatar_url;
-                    }
-                })
-                .catch(error => {
-                    console.error('Failed to fetch GitHub profile picture:', error);
-                    // The original src from the HTML will be used as a fallback.
-                });
-            
             // --- Live Clock in Footer ---
             const clockElementFooter = document.getElementById('live-clock-footer');
             function updateFooterClock() {
